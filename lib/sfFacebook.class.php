@@ -493,4 +493,33 @@ class sfFacebook
     return join('&', $parameter_array);
   }
 
+  public function getsfGuardUser(){
+    $user = sfGuardUserTable::getInstance()->findOneByUsername('Facebook_'.$this->getUser());
+
+    return $user;
+  }
+
+  public function registerFacebookUser(){
+    $client = $this->getFacebookClient();
+    $client = $client->api('/me','GET');
+    $user = sfGuardUserTable::getInstance()->findOneByUsername('Facebook_'.$client['id']);
+    if(!$user){
+      $user = new sfGuardUser();
+      $user->setFirstName($client['first_name'])  
+           ->setLastName($client['last_name'])   
+           ->setUsername('Facebook_'.$client['id'])
+           ->setEmailAddress($client['username'].'@'.$client['id'])
+           ->save();
+    }
+
+    return $client;
+  }
+
+  public function getFacebookByUid($uid, $params = null){
+    $facebook = new sfFacebook();
+    $facebook = $facebook->getFacebookClient()->api('/'.$uid.$params,'GET');
+
+    return $facebook;
+  }
+
 }

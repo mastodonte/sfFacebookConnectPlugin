@@ -6,8 +6,8 @@
 ?>
 
 <h1>
-  Welcome <fb:name uid="<?php echo $sf_user->getCurrentFacebookUid() ?>" useyou="false" ></fb:name> !
-  <fb:profile-pic uid="<?php echo $sf_user->getCurrentFacebookUid() ?>" linked="true" ></fb:profile-pic>
+  Welcome <fb:name uid="" useyou="false" ></fb:name> !
+  <fb:profile-pic uid="" linked="true" ></fb:profile-pic>
 </h1>
 
 <br />

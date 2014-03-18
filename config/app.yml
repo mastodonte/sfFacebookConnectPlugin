@@ -1,15 +1,15 @@
 # default values
 all:
   facebook:
-    api_key: xxx
-    api_secret: xxx
-    api_id: xxx
+    api_key: '216054448557350'
+    api_secret: 'b6485b1bab0ea51a02aa26bb51b82b48'
+    api_id: '216054448557350'
     redirect_after_connect: false
     redirect_after_connect_url: ''
     connect_signin_url: 'sfFacebookConnectAuth/signin'
-    app_url: '/my-app'
+    app_url: '/sinco_sports'
     guard_adapter: ~
-    js_framework: none # none, jQuery or prototype.
+    js_framework: jQuery # none, jQuery or prototype.
     
     # It is highly recommended to use a js framework if you want a correct experience in IE 
 
@@ -21,6 +21,6 @@ all:
     profile_email_hash_name: email_hash
 
   facebook_connect:
-    load_routing:     true
+    load_routing:     false
     user_permissions: []
 
